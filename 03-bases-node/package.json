@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "03-bases-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Asombrosa tabla de multiplicar con archivos de texto",
   "main": "app.js",
   "scripts": {
@@ -11,6 +11,7 @@
   "author": "Rodrigo Rojas",
   "license": "MIT",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "yargs": "^17.5.1"
   }
 }
