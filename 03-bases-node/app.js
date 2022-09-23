@@ -1,15 +1,18 @@
 import { crearArchivo } from './helpers/multiplicar.js';
-import yargs from 'yargs'
-import { hideBin } from 'yargs/helpers'
-const argv = yargs(hideBin(process.argv)).argv
-
+import { argv } from "./config/yargs.js";
 
 console.clear();
 
-console.log(process.argv);
-console.log(argv);
+crearArchivo( argv.b, argv.l )
+    .then(nombreArchivo => console.log(nombreArchivo, ' ha sido creado'))
+    .catch(err => console.log(err));
 
-console.log('base: yargs', argv.base);
+
+//===============Logica anterior=====================
+// console.log(process.argv);
+// console.log(argv);
+
+// console.log('base: yargs', argv.b);
 
 //Manera primitiva
 // const[,,arg3 = 'base=5'] = process.argv;
@@ -18,7 +21,3 @@ console.log('base: yargs', argv.base);
 // console.log(base);
 
 // const base = 6;
-
-// crearArchivo( base )
-//     .then(nombreArchivo => console.log(nombreArchivo, ' ha sido creado'))
-//     .catch(err => console.log(err));

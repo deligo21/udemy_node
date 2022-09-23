@@ -1,16 +1,19 @@
 import { writeFile, writeFileSync } from 'fs';
 
-const crearArchivo = async(base = 5) => {
+const crearArchivo = async(base = 5, listar = false) => {
 
     try {
-        console.log(`Tabla del ${base}\n`);
         let salida = '';
-    
+        
         for (let i = 1; i < 11; i++){
             salida += (`${base} x ${i} = ${base * i}\n`);
         }
-    
-        console.log(salida);
+        
+        if (listar) {
+            
+            console.log(`Tabla del ${base}\n`);
+            console.log(salida);
+        }
         
         let nombreArchivo = `tabla-${base}.txt`;
 
