@@ -1,6 +1,7 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
+
 const argv = yargs(hideBin(process.argv))
     .option('b', {
         alias: 'base',
@@ -12,7 +13,13 @@ const argv = yargs(hideBin(process.argv))
         alias: 'listar',
         type: 'boolean',
         default: false,
-        describe: 'Muesra la tabla de multiplicar en consola',
+        describe: 'Muestra la tabla de multiplicar en consola',
+    })
+    .option('h',{
+        alias: 'hasta',
+        type: 'number',
+        default: 10,
+        describe: 'Es el limite al que va a llegar la tabla',
     })
     .check((argv, options) =>{
         if (isNaN(argv.b)) {

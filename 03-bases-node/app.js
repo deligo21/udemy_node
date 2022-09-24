@@ -1,10 +1,11 @@
 import { crearArchivo } from './helpers/multiplicar.js';
 import { argv } from "./config/yargs.js";
+import colors from 'colors';
 
 console.clear();
 
-crearArchivo( argv.b, argv.l )
-    .then(nombreArchivo => console.log(nombreArchivo, ' ha sido creado'))
+crearArchivo( argv.b, argv.l, argv.h )
+    .then(nombreArchivo => console.log(nombreArchivo.rainbow, ' ha sido creado'))
     .catch(err => console.log(err));
 
 
